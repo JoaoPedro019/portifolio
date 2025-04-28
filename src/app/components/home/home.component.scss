@@ -1,0 +1,16 @@
+.home {
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.button-home {
+  display: flex;
+  gap: 20px;
+  padding: 5px;
+}

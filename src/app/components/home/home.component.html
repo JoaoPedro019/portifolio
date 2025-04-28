@@ -1,0 +1,51 @@
+<div class="grid grid-nogutter text-800">
+  <div
+    class="col-12 md:col-6 p-6 text-center md:text-left flex align-items-center"
+  >
+    <section>
+      <span class="block text-6xl font-bold mb-1">Olá, Eu Sou João Pedro</span>
+      <div class="text-6xl text-primary font-bold mb-3">
+        Desenvolvedor FullStack
+      </div>
+      <p class="mt-0 mb-4 text-700 line-height-3">
+        Estou em constante evolução como desenvolvedor FullStack, sempre
+        buscando novos desafios, aprendizados e oportunidades para criar
+        soluções inteligentes.
+      </p>
+
+      <button
+        pButton
+        pRipple
+        label="Ver Projetos"
+        icon="pi pi-graduation-cap"
+        type="button"
+        class="mr-3 p-button-raised"
+        (click)="navigateByProjects()"
+      ></button>
+      <button
+        pButton
+        pRipple
+        label="Download CV"
+        type="button"
+        icon="pi pi-download"
+        (click)="downloadCurriculo()"
+        class="mr-3 p-button-outlined"
+        [loading]="loadingCurriculo"
+      ></button>
+      <app-social-buttons
+        github="https://github.com/JoaoPedro019"
+        linkedin="https://www.linkedin.com/in/joao-pedro-pereira-da-silva/"
+        email="joao17042003@gmail.com"
+      ></app-social-buttons>
+    </section>
+  </div>
+
+  <div class="col-12 md:col-6 overflow-hidden">
+    <img
+      [src]="'assets/images/home.png'"
+      alt="Imagem de João Pedro"
+      class="md:ml-auto block md:h-full w-8"
+      style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)"
+    />
+  </div>
+</div>

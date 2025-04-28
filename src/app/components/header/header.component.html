@@ -1,0 +1,39 @@
+<div class="navbar">
+  <p-toolbar
+    [style]="{
+    padding: '1rem 1rem 1rem 1.5rem',
+    'backdrop-filter': 'blur(25rem)',
+  }"
+  >
+    <ng-template #start>
+      <div class="pr-8">
+        <strong>DevJoão.P</strong>
+      </div>
+    </ng-template>
+
+    <ng-template #end>
+      <div class="flex items-center gap-2">
+        <p-button
+          *ngFor="let link of navLinks"
+          [label]="link.label"
+          text
+          plain
+          [routerLink]="link.path"
+          [ngClass]="{ 'active-link': activeSection === link.path }"
+          (onClick)="navigateBySection(link.path)"
+          class="hover:scale-105 transition-transform duration-200"
+        />
+      </div>
+      <div class="pl-2">
+        <button
+          class="toggle-button"
+          style="cursor: pointer"
+          (click)="toggleDarkMode()"
+          [ngClass]="{ 'dark-mode': isDarkMode }"
+        >
+          <i class="pi" [ngClass]="isDarkMode ? 'pi-moon' : 'pi-sun'"></i>
+        </button>
+      </div>
+    </ng-template>
+  </p-toolbar>
+</div>
