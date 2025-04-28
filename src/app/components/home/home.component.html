@@ -1,50 +1,64 @@
 <div class="grid grid-nogutter text-800">
+  <!-- Texto principal -->
   <div
-    class="col-12 md:col-6 p-6 text-center md:text-left flex align-items-center"
+    class="col-12 md:col-6 flex flex-column justify-content-center align-items-center md:align-items-start text-center md:text-left p-4 md:p-6"
   >
-    <section>
-      <span class="block text-6xl font-bold mb-1">Olá, Eu Sou João Pedro</span>
-      <div class="text-6xl text-primary font-bold mb-3">
+    <section class="w-full">
+      <span class="block text-3xl sm:text-4xl md:text-6xl font-bold mb-3"
+        >Olá, Eu Sou João Pedro</span
+      >
+
+      <div class="text-2xl sm:text-4xl md:text-6xl text-primary font-bold mb-4">
         Desenvolvedor FullStack
       </div>
-      <p class="mt-0 mb-4 text-700 line-height-3">
+
+      <p class="text-base sm:text-lg text-700 line-height-3 mb-5">
         Estou em constante evolução como desenvolvedor FullStack, sempre
         buscando novos desafios, aprendizados e oportunidades para criar
         soluções inteligentes.
       </p>
 
-      <button
-        pButton
-        pRipple
-        label="Ver Projetos"
-        icon="pi pi-graduation-cap"
-        type="button"
-        class="mr-3 p-button-raised"
-        (click)="navigateByProjects()"
-      ></button>
-      <button
-        pButton
-        pRipple
-        label="Download CV"
-        type="button"
-        icon="pi pi-download"
-        (click)="downloadCurriculo()"
-        class="mr-3 p-button-outlined"
-        [loading]="loadingCurriculo"
-      ></button>
-      <app-social-buttons
-        github="https://github.com/JoaoPedro019"
-        linkedin="https://www.linkedin.com/in/joao-pedro-pereira-da-silva/"
-        email="joao17042003@gmail.com"
-      ></app-social-buttons>
+      <div
+        class="flex flex-wrap gap-3 justify-content-center md:justify-content-start"
+      >
+        <button
+          pButton
+          pRipple
+          label="Ver Projetos"
+          icon="pi pi-graduation-cap"
+          type="button"
+          class="p-button-raised"
+          (click)="navigateByProjects()"
+        ></button>
+
+        <button
+          pButton
+          pRipple
+          label="Download CV"
+          type="button"
+          icon="pi pi-download"
+          (click)="downloadCurriculo()"
+          class="p-button-outlined"
+          [loading]="loadingCurriculo"
+        ></button>
+      </div>
+
+      <div class="mt-4 flex justify-content-center md:justify-content-start">
+        <app-social-buttons
+          github="https://github.com/JoaoPedro019"
+          linkedin="https://www.linkedin.com/in/joao-pedro-pereira-da-silva/"
+          email="joao17042003@gmail.com"
+        ></app-social-buttons>
+      </div>
     </section>
   </div>
-
-  <div class="col-12 md:col-6 overflow-hidden">
+  <div
+    class="hidden col-12 md:col-6 overflow-hidden flex justify-content-center md:justify-content-end imagem-home"
+  >
     <img
-      [src]="'assets/images/home.png'"
+      src="assets/images/home.png"
       alt="Imagem de João Pedro"
-      class="md:ml-auto block md:h-full w-8"
+      class="w-10 md:w-8"
       style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)"
     />
   </div>
