@@ -4,6 +4,14 @@ import { ButtonModule } from 'primeng/button';
 import { SocialButtonsComponent } from '../social-buttons/social-buttons.component';
 import { Router } from '@angular/router';
 import { ScrollService } from '../../services/scroll.service';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -11,8 +19,20 @@ import { ScrollService } from '../../services/scroll.service';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   providers: [ScrollService],
+  animations: [
+    trigger('fadeAnimation', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(20px)' }),
+        animate(
+          '600ms ease-out',
+          style({ opacity: 1, transform: 'translateY(0)' })
+        ),
+      ]),
+    ]),
+  ],
 })
 export class HomeComponent {
+  animationState = 'in';
   loadingCurriculo = false;
   private router = inject(Router);
   constructor(public scrollService: ScrollService) {}
@@ -26,6 +46,6 @@ export class HomeComponent {
     this.loadingCurriculo = false;
   }
   navigateByProjects() {
-    this.scrollService.scrollToSection('skills');
+    this.scrollService.scrollToSection('projects');
   }
 }

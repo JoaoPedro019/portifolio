@@ -1,18 +1,35 @@
-<div class="navbar">
+<header class="navbar" role="banner" aria-label="Navegação principal">
   <p-toolbar
+    class="toolbar-fixed"
     [style]="{
-    padding: '1rem 1rem 1rem 1.5rem',
-    'backdrop-filter': 'blur(25rem)',
-  }"
+      'backdrop-filter': 'blur(25px)',
+      'background-color': isDarkMode
+        ? 'rgba(0, 0, 0, 0.8)'
+        : 'rgba(255, 255, 255, 0.8)'
+    }"
   >
-    <ng-template #start>
-      <div class="pr-8">
+    <ng-template pTemplate="start">
+      <div class="pr-2 md:hidden">
+        <button
+          pButton
+          pRipple
+          class="toggle-menu md:hidden p-button-raised"
+          aria-label="Abrir menu de navegação"
+          (click)="toggleMenu()"
+        >
+          <i class="pi pi-bars"></i>
+        </button>
+      </div>
+      <div class="logo">
         <strong>DevJoão.P</strong>
       </div>
     </ng-template>
 
-    <ng-template #end>
-      <div class="flex items-center gap-2">
+    <ng-template pTemplate="end">
+      <nav
+        class="nav-links hidden md:flex align-items-center gap-2 pr-2"
+        aria-label="Links de navegação"
+      >
         <p-button
           *ngFor="let link of navLinks"
           [label]="link.label"
@@ -20,20 +37,40 @@
           plain
           [routerLink]="link.path"
           [ngClass]="{ 'active-link': activeSection === link.path }"
-          (onClick)="navigateBySection(link.path)"
-          class="hover:scale-105 transition-transform duration-200"
+          (click)="navigateBySection(link.path)"
+          class="custom-button hover:scale-105 transition-transform duration-200"
         />
-      </div>
-      <div class="pl-2">
-        <button
-          class="toggle-button"
-          style="cursor: pointer"
-          (click)="toggleDarkMode()"
-          [ngClass]="{ 'dark-mode': isDarkMode }"
-        >
-          <i class="pi" [ngClass]="isDarkMode ? 'pi-moon' : 'pi-sun'"></i>
-        </button>
-      </div>
+      </nav>
+
+      <button
+        class="toggle-button"
+        aria-label="Alternar modo escuro/claro"
+        (click)="toggleDarkMode()"
+      >
+        <i class="pi" [ngClass]="isDarkMode ? 'pi-moon' : 'pi-sun'"></i>
+      </button>
     </ng-template>
   </p-toolbar>
-</div>
+
+  <p-drawer
+    [(visible)]="menuVisible"
+    position="left"
+    [style]="{ width: '250px' }"
+    [modal]="false"
+    [showCloseIcon]="true"
+    aria-label="Menu de navegação móvel"
+  >
+    <nav class="flex flex-column gap-3 p-3">
+      <p-button
+        *ngFor="let link of navLinks"
+        [label]="link.label"
+        text
+        plain
+        [routerLink]="link.path"
+        [ngClass]="{ 'active-link': activeSection === link.path }"
+        (click)="navigateBySection(link.path); toggleMenu()"
+        class="custom-button"
+      />
+    </nav>
+  </p-drawer>
+</header>

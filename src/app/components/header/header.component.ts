@@ -8,6 +8,7 @@ import { CardModule } from 'primeng/card';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { ScrollService } from '../../services/scroll.service';
+import { DrawerModule } from 'primeng/drawer';
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -19,6 +20,7 @@ import { ScrollService } from '../../services/scroll.service';
     CardModule,
     CommonModule,
     RouterModule,
+    DrawerModule,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
@@ -28,6 +30,7 @@ export class HeaderComponent implements OnInit {
   activeSection = 'home';
   private observer: IntersectionObserver | null = null;
   private router = inject(Router);
+  menuVisible = false;
   isDarkMode: boolean = false;
   navLinks = [
     { label: 'Início', path: 'home' },
@@ -91,5 +94,9 @@ export class HeaderComponent implements OnInit {
         this.observer?.observe(section);
       }
     });
+  }
+
+  toggleMenu() {
+    this.menuVisible = !this.menuVisible;
   }
 }

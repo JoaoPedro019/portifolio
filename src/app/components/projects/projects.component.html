@@ -1,0 +1,76 @@
+<div
+  data-aos="fade-left"
+  data-aos-duration="1000"
+  class="grid-nogutter px-4 py-8 md:px-6 lg:px-8 text-center"
+>
+  <div class="mb-3 font-bold text-5xl">
+    <span class="text-blue-600">Projetos</span>
+  </div>
+  <div class="text-700 mb-3">
+    Projetos que desenvolvi aplicando minhas habilidades técnicas
+  </div>
+  <div class="justify-content-center align-items-center">
+    <div class="flex justify-content-center mb-4">
+      <p-menubar [model]="menuItems" class="flex"></p-menubar>
+    </div>
+
+    <div
+      data-aos="fade-right"
+      data-aos-duration="1000"
+      class="grid gap-4 justify-content-center"
+    >
+      <p-card
+        class="m-2 text-left project-card"
+        *ngFor="let projeto of filteredProjects"
+        [style]="{ width: '100%', maxWidth: '25rem', overflow: 'hidden' }"
+      >
+        <ng-template pTemplate="header">
+          <img
+            [src]="projeto.imageUrl"
+            [alt]="projeto.titulo"
+            class="w-full project-image"
+            style="height: 10rem; object-fit: cover"
+          />
+        </ng-template>
+
+        <ng-template pTemplate="title">
+          <h2 class="text-lg font-bold title">{{ projeto.titulo }}</h2>
+        </ng-template>
+        <ng-template pTemplate="subtitle">
+          <p class="text-sm text-700 description">{{ projeto.descricao }}</p>
+        </ng-template>
+
+        <p class="flex flex-wrap gap-2 mt-2 tech-chips">
+          <p-chip
+            *ngFor="let tech of projeto.tecnologias"
+            [label]="tech"
+            styleClass="surface-100 text-sm m-0"
+          ></p-chip>
+        </p>
+
+        <ng-template pTemplate="footer">
+          <div class="flex flex-column sm:flex-row gap-2 mt-3 buttons">
+            <p-button
+              label="Código"
+              icon="pi pi-code"
+              styleClass="p-button-outlined p-button-rounded w-full sm:w-auto"
+              (onClick)="openUrl(projeto.urlRepo)"
+            ></p-button>
+            <p-button
+              *ngIf="
+                (projeto.categoria === 'Frontend' ||
+                  projeto.categoria === 'Fullstack') &&
+                projeto.urlDemo !== 'N/A'
+              "
+              label="Demonstração"
+              icon="pi pi-play"
+              styleClass="p-button-rounded p-button-secondary w-full sm:w-auto"
+              (onClick)="openUrl(projeto.urlDemo)"
+              target="_blank"
+            ></p-button>
+          </div>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+</div>

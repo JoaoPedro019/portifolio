@@ -1,11 +1,11 @@
 export interface ExperienciaModel {
   titulo: string;
   descricao: string;
-  imagemUrlEmp: string;
   tecnologia: Tecnologia[];
+  data: string;
+  empresa: string;
 }
 
 export interface Tecnologia {
   nome: string;
-  logo: string;
 }

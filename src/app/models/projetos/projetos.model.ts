@@ -4,5 +4,7 @@ export interface Projetos {
   imageUrl: string;
   tecnologias: string[];
   icon: string;
-  color: string;
+  categoria: string;
+  urlDemo: string;
+  urlRepo: string;
 }

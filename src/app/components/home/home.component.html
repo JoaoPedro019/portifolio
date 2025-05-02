@@ -1,23 +1,19 @@
-<div class="grid grid-nogutter text-800">
-  <!-- Texto principal -->
+<div [@fadeAnimation]="animationState" class="grid grid-nogutter text-800">
   <div
     class="col-12 md:col-6 flex flex-column justify-content-center align-items-center md:align-items-start text-center md:text-left p-4 md:p-6"
   >
     <section class="w-full">
-      <span class="block text-3xl sm:text-4xl md:text-6xl font-bold mb-3"
-        >Olá, Eu Sou João Pedro</span
-      >
-
+      <span class="block text-3xl sm:text-4xl md:text-6xl font-bold mb-3">
+        Olá, Eu Sou João Pedro
+      </span>
       <div class="text-2xl sm:text-4xl md:text-6xl text-primary font-bold mb-4">
         Desenvolvedor FullStack
       </div>
-
       <p class="text-base sm:text-lg text-700 line-height-3 mb-5">
         Estou em constante evolução como desenvolvedor FullStack, sempre
         buscando novos desafios, aprendizados e oportunidades para criar
         soluções inteligentes.
       </p>
-
       <div
         class="flex flex-wrap gap-3 justify-content-center md:justify-content-start"
       >
@@ -30,7 +26,6 @@
           class="p-button-raised"
           (click)="navigateByProjects()"
         ></button>
-
         <button
           pButton
           pRipple
@@ -41,14 +36,6 @@
           class="p-button-outlined"
           [loading]="loadingCurriculo"
         ></button>
-      </div>
-
-      <div class="mt-4 flex justify-content-center md:justify-content-start">
-        <app-social-buttons
-          github="https://github.com/JoaoPedro019"
-          linkedin="https://www.linkedin.com/in/joao-pedro-pereira-da-silva/"
-          email="joao17042003@gmail.com"
-        ></app-social-buttons>
       </div>
     </section>
   </div>

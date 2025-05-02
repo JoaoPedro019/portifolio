@@ -1,0 +1,61 @@
+.project-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 32rem;
+  border-radius: 0.5rem;
+  color: white;
+}
+
+.project-card .p-card {
+  height: 100%;
+}
+
+.project-card .p-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1rem;
+}
+
+.project-card .p-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  min-height: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  flex-grow: 1;
+  min-height: 3rem;
+  margin-bottom: 1rem;
+}
+
+.tech-chips {
+  min-height: 3rem;
+  margin-bottom: 1rem;
+}
+
+.buttons {
+  margin-top: auto;
+}
+
+@media (max-width: 767px) {
+  .project-card {
+    min-height: 30rem;
+    max-width: 100% !important;
+  }
+
+  .project-image {
+    height: 8rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .project-card {
+    min-height: 32rem;
+  }
+}

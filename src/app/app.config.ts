@@ -26,40 +26,36 @@ const Mypreset = definePreset(Aura, {
     colorScheme: {
       light: {
         primary: {
-          color: '{blue.500}', // Cor principal
-          hoverColor: '{blue.400}', // Cor ao passar o mouse
+          color: '{blue.500}',
+          hoverColor: '{blue.400}',
           inverseColor: '#0f0f0',
         },
         button: {
-          // Configuração específica para botões
-          background: '{primary.color}', // Background do botão
-          hoverBackground: '{primary.hoverColor}', // Background ao passar o mouse
-          color: '{primary.inverseColor}', // Cor do texto
+          background: '{primary.color}',
+          hoverBackground: '{primary.hoverColor}',
+          color: '{primary.inverseColor}',
         },
         toggle: {
-          // Configuração específica para toggles
-          checkedBackground: '{primary.color}', // Cor do toggle ativado
-          uncheckedBackground: '{blue.100}', // Cor do toggle desativado
-          handleBackground: '#ffffff', // Cor da "bolinha"
+          checkedBackground: '{primary.color}',
+          uncheckedBackground: '{blue.100}',
+          handleBackground: '#ffffff',
         },
       },
       dark: {
         primary: {
-          color: '{blue.500}', // Cor principal
-          hoverColor: '{blue.400}', // Cor ao passar o mouse
+          color: '{blue.500}',
+          hoverColor: '{blue.400}',
           inverseColor: '#ffffff',
         },
         button: {
-          // Configuração específica para botões
-          background: '{primary.color}', // Background do botão
-          hoverBackground: '{primary.hoverColor}', // Background ao passar o mouse
-          color: '{primary.inverseColor}', // Cor do texto
+          background: '{primary.color}',
+          hoverBackground: '{primary.hoverColor}',
+          color: '{primary.inverseColor}',
         },
         toggle: {
-          // Configuração específica para toggles
-          checkedBackground: '{primary.color}', // Cor do toggle ativado
-          uncheckedBackground: '{blue.100}', // Cor do toggle desativado
-          handleBackground: '#ffffff', // Cor da "bolinha"
+          checkedBackground: '{primary.color}',
+          uncheckedBackground: '{blue.100}',
+          handleBackground: '#ffffff',
         },
       },
     },
