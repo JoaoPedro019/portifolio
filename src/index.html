@@ -21,17 +21,4 @@
   <script src="https://unpkg.com/primeng@10.0.0/card/card.min.js"></script>
   <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    // Inicializar AOS
-    AOS.init({
-      once: false, // Animação ocorre apenas uma vez
-      offset: 100, // Inicia a animação 100px antes do elemento entrar na viewport
-      disable: window.innerWidth < 768, // Desativa animações em dispositivos móveis, se necessário
-    });
-
-    // Forçar recarregamento das animações se a página for recarregada com scroll
-    window.addEventListener("load", () => {
-      AOS.refresh();
-    });
-  </script>
 </html>

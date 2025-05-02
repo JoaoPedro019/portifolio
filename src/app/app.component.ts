@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as AOS from 'aos';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
@@ -28,4 +29,15 @@ import { AnimateOnScrollModule } from 'primeng/animateonscroll';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {}
+export class AppComponent implements OnInit {
+  ngOnInit() {
+    AOS.init({
+      once: false,
+      offset: 100,
+    });
+
+    window.addEventListener('load', () => {
+      AOS.refresh();
+    });
+  }
+}
